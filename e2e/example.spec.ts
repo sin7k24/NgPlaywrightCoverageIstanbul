@@ -6,7 +6,7 @@ test('page1 test', async ({ page }) => {
     await page.getByRole('link', { name: 'page1' }).click();
     await page.getByRole('button', { name: 'do something on page1' }).click();
     await expect(page.locator('#result')).toHaveText(
-        'something on page1 is done.'
+        'something on page1 done.'
     );
 });
 
@@ -15,6 +15,6 @@ test('page2 test', async ({ page }) => {
     await page.getByRole('link', { name: 'page2' }).click();
     await page.getByRole('button', { name: 'do something on page2' }).click();
     await expect(page.locator('#result')).toHaveText(
-        'something on page2 is done.'
+        'something on page2 done.'
     );
 });

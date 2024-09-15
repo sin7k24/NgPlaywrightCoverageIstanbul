@@ -9,6 +9,6 @@ export class Page1Component {
     message = '';
 
     doSomethingOnPage1() {
-        this.message = 'something on page1 is done.';
+        this.message = 'something on page1 done.';
     }
 }
