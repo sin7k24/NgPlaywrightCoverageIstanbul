@@ -1,4 +1,3 @@
-// var a = require("path").join(__dirname, "src");
 module.exports = {
     module: {
         rules: [
@@ -11,7 +10,6 @@ module.exports = {
                     },
                 },
                 enforce: "post",
-                // include: require('path').join(__dirname, '..', 'src'),
                 include: require("path").join(__dirname, "src"),
                 exclude: [/node_modules/, /(ngfactory|ngstyle)\.js/],
             },

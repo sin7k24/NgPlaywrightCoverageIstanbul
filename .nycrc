@@ -2,6 +2,17 @@
     "extends": "@istanbuljs/nyc-config-typescript",
     "all": true,
     "report-dir": "coverage-e2e",
-    "exclude": ["**/coverage/**", "**/*.spec.ts"],
-    "reporter": ["html", "lcov", "text-summary", "text"]
+    "exclude": [
+        "**/coverage/**",
+        "**/*.spec.ts"
+    ],
+    "reporter": [
+        "html",
+        "lcov",
+        "text-summary",
+        "text"
+    ],
+    "ignore-class-method": [
+        "bootstrapModule"
+    ]
 }
