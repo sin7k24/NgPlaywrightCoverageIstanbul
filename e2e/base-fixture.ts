@@ -3,13 +3,16 @@ import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// nyc（istanbulのCLI）がカバレッジ集計対象とするデフォルトディレクトリ（webshinsei/.nyc_output）
+// Default directory that nyc command refers to.
 const istanbulCLIOutput = path.join(process.cwd(), '.nyc_output');
+if (!fs.existsSync(istanbulCLIOutput)) {
+    fs.mkdirSync(istanbulCLIOutput);
+}
 
-// 1testケース毎のファイル名ランダムパート
+// Random part of file name for each test case
 const generateUUID = () => crypto.randomBytes(16).toString('hex');
 
-// playwrightのtest関数を拡張
+// Extend playwright's test function
 export const test = baseTest.extend({
     context: async ({ context }, use) => {
         await context.addInitScript(() => {
